@@ -8,7 +8,7 @@ def reluActivation(potential):
         return 0
 
 def sigmoidActivation(potential):
-    return 1/(1+math.exp(-(potential-config.bias_activation)))
+    return 1/(1+math.exp(-config.strength_activation*(potential-config.bias_activation)))
 
 def gradSigmoidActivation(potential):
-    return potential*(1-potential)
+    return config.strength_activation*potential*(1-potential)
